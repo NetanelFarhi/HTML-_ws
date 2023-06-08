@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    font-family: Arial, sans-serif;
+}
+.container {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+input, button, select {
+    margin: 10px 0;
+}
+table {
+    width: 100%;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+}
+th {
+    background-color: #f2f2f2;
+}
+.return-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+</style>
+<script>
+function showReportPopup() {
+    alert("הוצאת דוח מלאי התבצעה בהצלחה");
+}
+
+function returnToMenu() {
+    window.location.href = "תפריט.html";
+}
+</script>
+</head>
+<body>
+<div class="container">
+    <h1>מסך ניהול מלאי</h1>
+
+    <label for="stand_select">בחירת עמדה:</label><br>
+    <select id="stand_select" name="stand_select">
+        <option value="">בחר עמדה...</option>
+        <option value="stand1">עמדה 1</option>
+        <option value="stand2">עמדה 2</option>
+        <!-- Add more options here if needed -->
+    </select><br>
+
+    <label for="sku_search">חיפוש מק"ט:</label><br>
+    <input type="text" id="sku_search" name="sku_search">
+    <button type="button">חפש</button><br>
+
+    <h2>תוצאות חיפוש:</h2>
+    <table>
+        <tr>
+            <th>מק"ט</th>
+            <th>שם המוצר</th>
+            <th>כמות במלאי</th>
+        </tr>
+        <tr>
+            <td>12345</td>
+            <td>מוצר 1</td>
+            <td>50</td>
+        </tr>
+        <tr>
+            <td>12346</td>
+            <td>מוצר 2</td>
+            <td>40</td>
+        </tr>
+        <!-- Add more rows with synthetic data here -->
+    </table>
+
+    <button type="button" onclick="showReportPopup()">הוצאת דוח מלאי</button><br>
+    <button class="return-button" onclick="returnToMenu()">חזרה לתפריט</button>
+</div>
+</body>
+</html>

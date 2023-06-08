@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 300px;
+            margin: auto;
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 10px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            text-align: right;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 5px;
+        }
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            cursor: pointer;
+        }
+        .form-group button:hover {
+            background-color: #0056b3;
+        }
+        .notification {
+            background-color: #f2f2f2;
+            color: #333;
+            padding: 10px;
+            text-align: center;
+            display: none;
+        }
+        .return-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            padding: 5px 10px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function showNotification(message) {
+            var notification = document.getElementById('notification');
+            notification.innerHTML = message;
+            notification.style.display = 'block';
+            setTimeout(function() {
+                notification.style.display = 'none';
+            }, 3000);
+        }
+
+        function submitForm(event) {
+            event.preventDefault();
+            showNotification('הנתונים נשמרו בהצלחה!');
+        }
+
+        function returnToMenu() {
+            window.location.href = "תפריט.html";
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>מסך פיננסי לעמדה</h1>
+
+        <form action="#" onsubmit="submitForm(event)">
+            <div class="form-group">
+                <label for="daily_income">הזנת הכנסה יומית:</label>
+                <input type="number" id="daily_income" name="daily_income">
+            </div>
+            <div class="form-group">
+                <button type="submit">שמור</button>
+            </div>
+        </form>
+        <div class="notification" id="notification"></div>
+    </div>
+
+    <!-- Added button element -->
+    <button class="return-button" onclick="returnToMenu()">חזרה לתפריט</button>
+</body>
+</html>

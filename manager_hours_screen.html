@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 90%;
+            margin: auto;
+            padding: 20px;
+            position: relative;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+            padding: 5px;
+            text-align: center;
+        }
+        .btn-export {
+            padding: 10px 20px;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+            display: inline-block;
+        }
+        .btn-export:hover {
+            background-color: #0056b3;
+        }
+        h2 {
+            text-align: center;
+        }
+        .return-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        .return-button button {
+            padding: 10px 20px;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            cursor: pointer;
+        }
+        .return-button button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script>
+        function returnToMenu() {
+            window.location.href = "תפריט.html";
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>מסך שעות מנהל</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>שם העובד</th>
+                    <th>שעת כניסה</th>
+                    <th>שעת יציאה</th>
+                    <th>סה"כ שעות עבודה ביום</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>אברהם</td>
+                    <td>08:00</td>
+                    <td>17:00</td>
+                    <td>9</td>
+                </tr>
+                <tr>
+                    <td>שרה</td>
+                    <td>09:00</td>
+                    <td>18:00</td>
+                    <td>9</td>
+                </tr>
+                <tr>
+                    <td>יוסף</td>
+                    <td>10:00</td>
+                    <td>19:00</td>
+                    <td>9</td>
+                </tr>
+            </tbody>
+        </table>
+        <button class="btn-export" onclick="alert('הוצא לקובץ אקסל')">הוצא לקובץ אקסל</button>
+        <div class="return-button">
+            <button onclick="returnToMenu()">חזרה לתפריט</button>
+        </div>
+    </div>
+</body>
+</html>

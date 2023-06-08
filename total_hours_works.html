@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 300px;
+            margin: auto;
+            padding: 20px;
+            position: relative;
+        }
+        .form-group {
+            margin-bottom: 10px;
+            text-align: right;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            text-align: right;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 5px;
+        }
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            cursor: pointer;
+        }
+        .form-group button:hover {
+            background-color: #0056b3;
+        }
+        .return-button {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            text-align: right;
+        }
+        .return-button button {
+            background-color: #007BFF;
+            padding: 10px 20px;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .return-button button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script>
+        function showNotification() {
+            alert('הנתונים נשלחו בהצלחה');
+        }
+
+        function returnToMenu() {
+            window.location.href = "תפריט.html";
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>מסך שעות - עובד</h2>
+        <div class="form-group">
+            <label for="start-time" style="text-align: right;">הזנת כניסה בתחילת היום:</label>
+            <input type="time" id="start-time" name="start-time">
+        </div>
+        <div class="form-group">
+            <label for="end-time" style="text-align: right;">הזנת יציאה בסוף היום:</label>
+            <input type="time" id="end-time" name="end-time">
+        </div>
+        <div class="form-group">
+            <button type="submit" onclick="showNotification()">שמור שעות</button>
+        </div>
+        <div class="return-button">
+            <button onclick="returnToMenu()">חזרה לתפריט</button>
+        </div>
+    </div>
+</body>
+</html>

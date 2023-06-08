@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    direction: rtl; /* For Hebrew language */
+    margin-top: 0px; /* Move everything up */
+}
+.container {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    margin-top: 20px; /* Adjust the space at the top of the container */
+}
+.inventory {
+    width: 70%;
+    margin-right: 3%; /* Add margin to right */
+}
+.actions {
+    width: 30%;
+    margin-top: 30px; /* Move actions container down */
+}
+input, button {
+    margin: 3px 0;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+button {
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 10px;
+    text-align: right; /* Align text to the right in table cells */
+}
+h1 {
+    text-align: center;
+    margin-bottom: 0; /* Reduce margin-bottom for h1 */
+}
+h2 {
+    margin-top: 10px; /* Reduce margin-top for h2 */
+}
+fieldset {
+    padding: 10px;
+    margin: 10px 0;
+}
+legend {
+    font-weight: bold;
+}
+.return-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+</style>
+<script>
+function updateInventory() {
+    alert("מלאי התעדכן");
+}
+
+function reduceInventory() {
+    var reason = document.getElementById("reason").value;
+    if (reason === "") {
+        alert("אנא הזן את הסיבה להורדה");
+    } else {
+        alert("הוסר מלאי והסיבה להורדה: " + reason);
+    }
+}
+
+function exportInventoryReport() {
+    alert("הוצאת דוח מלאי התבצעה בהצלחה");
+}
+
+function setLowStockAlert() {
+    alert("התראת מלאי נמוך הוגדרה בהצלחה");
+}
+
+function returnToMenu() {
+    window.location.href = "תפריט.html";
+}
+</script>
+</head>
+<body>
+<h1>מסך מלאי לעמדה / חנות</h1>
+<div class="container">
+    <div class="inventory">
+        <h2>נתוני המלאי נכונים לתאריך : 06/06/2023, שעה: 15:30</h2>
+        <table>
+            <tr>
+                <th>מק"ט</th>
+                <th>שם המוצר</th>
+                <th>כמות במלאי</th>
+            </tr>
+            <tr><td>12345</td><td>מוצר 1</td><td>50</td></tr>
+            <tr><td>12346</td><td>מוצר 2</td><td>40</td></tr>
+            <tr><td>12347</td><td>מוצר 3</td><td>60</td></tr>
+            <tr><td>12348</td><td>מוצר 4</td><td>30</td></tr>
+            <tr><td>12349</td><td>מוצר 5</td><td>70</td></tr>
+            <tr><td>12350</td><td>מוצר 6</td><td>20</td></tr>
+            <tr><td>12351</td><td>מוצר 7</td><td>50</td></tr>
+            <tr><td>12352</td><td>מוצר 8</td><td>60</td></tr>
+            <tr><td>12353</td><td>מוצר 9</td><td>30</td></tr>
+            <tr><td>12354</td><td>מוצר 10</td><td>80</td></tr>
+        </table>
+    </div>
+    <div class="actions">
+        <fieldset>
+            <legend>חיפוש מק"ט</legend>
+            <input type="text" id="sku_search" name="sku_search">
+            <button type="button">חפש</button><br>
+        </fieldset>
+        <fieldset>
+            <legend>הוספת מלאי למק"ט</legend>
+            <input type="text" id="add_inventory_sku" name="add_inventory_sku" placeholder="מקט">
+            <input type="text" id="add_inventory_qty" name="add_inventory_qty" placeholder="כמות">
+            <button type="button" onclick="updateInventory()">הוסף</button><br>
+        </fieldset>
+        <fieldset>
+            <legend>החסרת כמות מהמק"ט</legend>
+            <input type="text" id="remove_inventory_sku" name="remove_inventory_sku" placeholder="מקט">
+            <input type="text" id="remove_inventory_qty" name="remove_inventory_qty" placeholder="כמות">
+            <label for="reason">הסיבה להורדה (מכירה / החלפה):</label><br>
+            <input type="text" id="reason" name="reason"><br>
+            <button type="button" onclick="reduceInventory()">הסר</button><br>
+        </fieldset>
+        <fieldset>
+            <legend>הוצאת דוח מלאי</legend>
+            <button type="button" onclick="exportInventoryReport()">הוצאת דוח מלאי</button><br>
+        </fieldset>
+        <fieldset>
+            <legend>התראת מלאי נמוך</legend>
+            <input type="text" id="low_stock_alert" name="low_stock_alert">
+            <button type="button" onclick="setLowStockAlert()">הגדר התראה</button><br>
+        </fieldset>
+    </div>
+</div>
+
+<!-- Added button element -->
+<button class="return-button" onclick="returnToMenu()">חזרה לתפריט</button>
+</body>
+</html>
